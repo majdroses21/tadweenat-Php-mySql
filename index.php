@@ -6,34 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>تدويناتي</title>
   <!-- CSS files -->
-  <link rel="stylesheet" href="/css/all.css"> <!-- Font awsome file -->
-  <link rel="stylesheet" href="/css/bootstrap.min.css"> <!-- bootstrape file -->
-  <link rel="stylesheet" href="/css/bootstrap.min.css.map"> <!-- bootstrape file -->
-  <link rel="stylesheet" href="/css/tadwenatStyle.css"> <!-- style.CSS -->
+  <link rel="stylesheet" href="css/all.css"> <!-- Font awsome file -->
+  <link rel="stylesheet" href="css/bootstrap.min.css"> <!-- bootstrape file -->
+  <link rel="stylesheet" href="css/bootstrap.min.css.map"> <!-- bootstrape file -->
+  <link rel="stylesheet" href="css/tadwenatStyle.css"> <!-- style.CSS -->
   <!-- javaScript Files -->
-  <script defer src="/js/all.min.js"></script> <!-- Font awsome file -->
-  <script defer src="/js/bootstrap.bundle.min.js"></script> <!-- bootstrape file -->
-  <script defer src="/js/bootstrap.bundle.min.js.map"></script> <!-- bootstrape file -->
+  <script defer src="js/all.min.js"></script> <!-- Font awsome file -->
+  <script defer src="js/bootstrap.bundle.min.js"></script> <!-- bootstrape file -->
+  <script defer src="js/bootstrap.bundle.min.js.map"></script> <!-- bootstrape file -->
 </head>
 <body >
-  <!-- Start Navbar -->
-  <nav class="navbar navbar-expand-lg bg-body-tertiary ">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">تدويناتي</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-link" href="#">عن المدونة</a>
-          <a class="nav-link" href="#">شروحات</a>
-          <a class="nav-link" href="#">منوعلات</a>
-          <a class="nav-link" href="#">اتصل بنا</a>
-        </div>
-      </div>
-    </div>
-  </nav>
-  <!-- End Navbar -->
+<?php
+  include("compon/header.php")
+  ?>
 
   <!-- Start Content -->
   <div class="content mt-3">
@@ -42,7 +27,7 @@
         <div class="col-md-9">
           <div class="post">
             <div class="post-img">
-              <img src="/images/test.png" alt="img-1">
+              <img src="images/test.png" alt="img-1">
             </div>
             <div class="post-title mt-3 mb-1">
               <h4>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة</h4>
@@ -63,7 +48,7 @@
           <!-- 2 -->
           <div class="post">
             <div class="post-img">
-              <img src="/images/test.png" alt="img-1">
+              <img src="images/test.png" alt="img-1">
             </div>
             <div class="post-title mt-3 mb-1">
               <h4>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة</h4>
@@ -84,7 +69,7 @@
           <!-- 3 -->
           <div class="post">
             <div class="post-img">
-              <img src="/images/test.png" alt="img-1">
+              <img src="images/test.png" alt="img-1">
             </div>
             <div class="post-title mt-3 mb-1">
               <h4>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة</h4>
@@ -148,19 +133,19 @@
             <ul>
               <li>
                 <a href="">
-                  <span> <img class="last-post-img" src="/images/test.png" alt="صورة مصغررة"></span>
+                  <span> <img class="last-post-img" src="images/test.png" alt="صورة مصغررة"></span>
                   <span>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة</span>
                 </a>
               </li>
               <li>
                 <a href="">
-                  <span> <img class="last-post-img" src="/images/test.png" alt="صورة مصغررة"></span>
+                  <span> <img class="last-post-img" src="images/test.png" alt="صورة مصغررة"></span>
                   <span>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة</span>
                 </a>
               </li>
               <li>
                 <a href="">
-                  <span> <img class="last-post-img" src="/images/test.png" alt="صورة مصغررة"></span>
+                  <span> <img class="last-post-img" src="images/test.png" alt="صورة مصغررة"></span>
                   <span>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة</span>
                 </a>
               </li>
@@ -173,10 +158,11 @@
     </div>
   </div>
   <!-- End Content -->
-<!-- Start Footer -->
-<footer>
-  <p>جميع الحقوق محفوظة &copy; 2023</p>
-</footer>
-<!-- End Footer -->
+  <h1>
+    <a href="categories.php">control</a>
+  </h1>
+  <?php
+  include("compon/footer.php")
+  ?>
 </body>
 </html>

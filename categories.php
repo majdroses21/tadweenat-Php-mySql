@@ -6,16 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>لوحة التحكم</title>
   <!-- CSS files -->
-  <link rel="stylesheet" href="/css/all.css"> <!-- Font awsome file -->
-  <link rel="stylesheet" href="/css/bootstrap.min.css"> <!-- bootstrape file -->
-  <link rel="stylesheet" href="/css/bootstrap.min.css.map"> <!-- bootstrape file -->
-  <link rel="stylesheet" href="/css/dashboard.css"> <!-- style.CSS -->
+  <link rel="stylesheet" href="css/all.css"> <!-- Font awsome file -->
+  <link rel="stylesheet" href="css/bootstrap.min.css"> <!-- bootstrape file -->
+  <link rel="stylesheet" href="css/bootstrap.min.css.map"> <!-- bootstrape file -->
+  <link rel="stylesheet" href="css/dashboard.css"> <!-- style.CSS -->
   <!-- javaScript Files -->
-  <script defer src="/js/all.min.js"></script> <!-- Font awsome file -->
-  <script defer src="/js/bootstrap.bundle.min.js"></script> <!-- bootstrape file -->
-  <script defer src="/js/bootstrap.bundle.min.js.map"></script> <!-- bootstrape file -->
+  <script defer src="js/all.min.js"></script> <!-- Font awsome file -->
+  <script defer src="js/bootstrap.bundle.min.js"></script> <!-- bootstrape file -->
+  <script defer src="js/bootstrap.bundle.min.js.map"></script> <!-- bootstrape file -->
 </head>
 <body >
+  <?php
+  include ("compon/header.php")
+  ?>
   <!-- Start Conant -->
     <div class="content">
         <div class="container-fluid">
@@ -39,7 +42,7 @@
                 <!--  -->
                 <ul class="collapse second-menue" id="menue">
                   <li>
-                    <a href="new-post.html">
+                    <a href="new-post.php">
                       <span><i class="fa fa-solid fa-edit"></i></span>
                       <span>مقال جديد</span>
                     </a>
@@ -82,5 +85,8 @@
     </div>
 
   <!-- End Conant -->
+  <?php
+  include ("compon/footer.php")
+  ?>
 </body>
 </html>
