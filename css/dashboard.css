@@ -1,6 +1,6 @@
 :root{
-  --first:#5b4834;
-  --second: #aaa69d;
+  --first:#5c2c9af4;
+  --second: #e6a5f2a1;
 }
 a{
   text-decoration: none;
@@ -8,6 +8,7 @@ a{
 body{
   /* background-color: #f9f9f9; */
   background-color: #f3f3f3;
+  /* background-color: red; */
 }
 .navbar{
   background-color: #fff !important;
@@ -55,11 +56,15 @@ body{
 .add-category{
   margin-top: 30px;
 }
-
-
-
-
 /* End */
+/* Start table */
+th{
+  background: var(--first)!important;
+  color: #fff;
+}
+
+/* End table */
+
 /* Start Footer */
 footer{
   background: #fff;
@@ -69,3 +74,26 @@ footer{
   font-size: 20px;
 }
 /* End Footer */
+/* STArt Posts */
+.img-post{
+  height: 100px;
+  width: 200px;
+}
+/* End Posts */
+/* Footer */
+.btn-majd{
+  color: var(--first);
+  font-size: 20px;
+  border: var(--first) 2px solid;
+  border-radius: 10px;
+  background-color: #fff;
+  transition: all 0.7s;
+  
+}
+.btn-majd:hover{
+  color: #fff;
+  background-color: var(--first);
+  font-size: 26px;
+  border: wheat 2px solid;
+
+}

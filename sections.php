@@ -21,16 +21,19 @@
   include("compon/connection.php");
 
   ?>
-
+  
+  <!-- On the home page, when you click on a specific category,
+    all similar categories are displayed
+    This is the page that shows all the categories that are inside the link in the id -->
   <!-- Start Content -->
   <div class="content mt-3">
     <div class="container">
       <div class="row ">
         <div class="col-md-9">
           <!-- Start php coding -->
-          <!-- get posts from the database -->
           <?php
-          $query = 'SELECT * FROM post ORDER BY id DESC';
+          $sec = $_GET['secId'];
+          $query = "SELECT * FROM post  WHERE post_catigory='$sec' ORDER BY id DESC";
           $res = mysqli_query($conn,$query );
 
           while ($row = mysqli_fetch_assoc($res)) {
@@ -52,8 +55,6 @@
               </div>
 
               <p class='post-content'>
-                <!-------- If the number of characters of the content of the article is large
-                          Show Read more  ---------------------------------------------------->
                  <?php 
                  if (strlen($row['post_content']) > 150) {
                   $row['post_content'] = substr($row['post_content'],0,300)."......." ;
@@ -69,7 +70,6 @@
         <!-- Start Slide bar -->
         <div class="col-md-3">
           <!--Start catagories -->
-          <!-- get the caty from   -->
           <?php include('compon/catyg.php'); ?>
           
           <!--End catagories -->

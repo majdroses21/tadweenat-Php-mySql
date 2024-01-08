@@ -4,7 +4,15 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>تدويناتي</title>
+  <title>
+    <?php 
+    include("compon/connection.php");
+    $query = "SELECT * FROM post";
+    $res = mysqli_query($conn, $query);
+    $row = mysqli_fetch_assoc($res);
+    echo $row['post_title'];
+    ?>
+  </title>
   <!-- CSS files -->
   <link rel="stylesheet" href="css/all.css"> <!-- Font awsome file -->
   <link rel="stylesheet" href="css/bootstrap.min.css"> <!-- bootstrape file -->
@@ -21,27 +29,30 @@
   include("compon/connection.php");
 
   ?>
-
+  <!--  When you click on read more, the full post will be displayed.
+        This is the post page.
+        The query where id = id is shown in the link -->
   <!-- Start Content -->
   <div class="content mt-3">
     <div class="container">
       <div class="row ">
         <div class="col-md-9">
           <!-- Start php coding -->
-          <!-- get posts from the database -->
           <?php
-          $query = 'SELECT * FROM post ORDER BY id DESC';
+          $gitId = $_GET['id'];
+          $query = "SELECT * FROM post WHERE id ='$gitId'";
           $res = mysqli_query($conn,$query );
-
-          while ($row = mysqli_fetch_assoc($res)) {
+          $row = mysqli_fetch_assoc($res);
+        
+         
             ?>
             
           <div class="post">
             <div class="post-img">
-              <a href="thePost.php?id=<?php echo $row['id']; ?>=<?php echo $row['id']; ?>"> <img src="uplodes/post_images/<?php echo $row['post_img']; ?>"  alt=" هذا المنشور لايحتوي على صورة"> </a>
+              <img src="uplodes/post_images/<?php echo $row['post_img']; ?>"  alt=" هذا المنشور لايحتوي على صورة">
             </div>
             <div class="post-title mt-3 mb-1">
-              <h4><a href="thePost.php?id=<?php echo $row['id']; ?>"><?php echo $row['post_title']; ?> </a></h4>
+              <h4><?php echo $row['post_title']; ?> </h4>
             </div>
             <div class="post-details">
 
@@ -51,28 +62,14 @@
                 <span><i class="fa fa-solid fa-tags"></i> <?php echo $row['post_catigory']; ?></span>
               </div>
 
-              <p class='post-content'>
-                <!-------- If the number of characters of the content of the article is large
-                          Show Read more  ---------------------------------------------------->
-                 <?php 
-                 if (strlen($row['post_content']) > 150) {
-                  $row['post_content'] = substr($row['post_content'],0,300)."......." ;
-                 }
-                 echo $row['post_content']; ?>
-                </p>
-              <a href="thePost.php?id=<?php echo $row['id']; ?>"> <button class="btn btn-tadwinat"> إظهار المزيد</button> </a>
+              <p class='post-content'>  <?php echo $row['post_content']; ?> </p>
             </div>
           </div>
-          <?php }?>
           <!-- End php coding -->
         </div>
         <!-- Start Slide bar -->
         <div class="col-md-3">
-          <!--Start catagories -->
-          <!-- get the caty from   -->
-          <?php include('compon/catyg.php'); ?>
-          
-          <!--End catagories -->
+         <?php include('compon/catyg.php'); ?>
           <!-- Start Last posts -->
           <?php include('compon/lastest.php'); ?>
         <!-- End Last posts -->
@@ -82,6 +79,8 @@
     </div>
   </div>
   <!-- End Content -->
+  
+
   
   <?php
   include("compon/footer.php")
